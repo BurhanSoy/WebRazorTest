@@ -1,0 +1,29 @@
+﻿@page
+@model BookListModel
+@{
+}
+<table class="table table-striped">
+      <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var b in Model.Books)
+      {
+    <tr>
+      <td>@b.Id</td>
+      <td>@b.Title</td>
+      <td>@b.Author</td>
+      <td><a href="BookDetails?id=@b.Id" class="btn btn-outline-primary">Details</a></td>
+    </tr>
+      }
+  </tbody>
+
+  </table>
+
+@*<h1>@Model.TestString</h1>
+<h2>@Model.TestSayi</h2>*@

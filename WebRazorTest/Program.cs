@@ -1,3 +1,5 @@
+using WebRazorTest.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+BookDb.Initialize();
 
 app.Run();

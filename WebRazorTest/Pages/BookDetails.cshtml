@@ -1,0 +1,21 @@
+﻿@page
+@model BookDetailsModel
+@{
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <ul>
+                <li>@Model.Book.Id</li>
+                <li>@Model.Book.Title</li>
+                <li>@Model.Book.Author</li>
+                @*<li><img src="@Model.Book.ImgUrl"></li>*@
+            </ul>
+        </div>
+
+        <div class="col-6">
+            <a href="Booklist" class="btn btn-primary">BACK</a>
+        </div>
+    </div>
+</div>
