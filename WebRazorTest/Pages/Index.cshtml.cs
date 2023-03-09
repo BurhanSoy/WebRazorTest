@@ -14,7 +14,7 @@ namespace WebRazorTest.Pages
 
         public void OnGet()
         {
-
+            
         }
     }
 }

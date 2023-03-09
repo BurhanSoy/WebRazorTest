@@ -2,3 +2,36 @@
 @model WebRazorTest.Pages.Customers.IndexModel
 @{
 }
+
+
+<h1>Contacts home page</h1>
+<div>
+    <a asp-page="Create">CREATE Customer</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.Customers != null)
+        {
+            foreach (var contact in Model.Customers)
+            {
+                <tr>
+                    <td>@contact.Id </td>
+                    <td>@contact.Name</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@contact.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@contact.Id">Details</a> |
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

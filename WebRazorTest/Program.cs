@@ -9,7 +9,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<CustomerDbContext>(options =>
     options.UseInMemoryDatabase("name")); //Bu tipte(CustomerDbContext) DbContext ekleyen metod
                                          //override edilen OnConfiguring metodunu bu þekilde server'a yaptýrýyoruz.(EFCore ile EF farký)
-                                        //
+                                        //Service'in nasýl baþlatýlacaðýný buradan belirliyoruz.
+                                        //data ile ilgili bilgileri CustDbContext karþýlýyor
 
 var app = builder.Build();
 
