@@ -2,7 +2,7 @@
 {
     public class BookDb
     {
-        private static readonly List<Book> Books;
+        private static readonly List<Book> Books = new List<Book>();
         /*
          Private -> Bu listeye sadece GetBooks'tan eriş
          Static -> Bu liste üretildiği zaman ekleme(add) yapmamızı sağlar.
@@ -19,7 +19,7 @@
             //        new Book{Title = "İyi Kitap", Author = "İyi Kitap", Id=2 }
             //};
 
-            Books = new List<Book>(); //Readonly'e bağlı bir durum (Araştır)
+            //Books = new List<Book>();
             Books.Add(new Book { Title = "İyi Kitap", Author = "Kötü Yazar", Id = 0 });
             Books.Add(new Book { Title = "Kötü Kitap", Author = "İyi Kitap", Id = 1 });
             Books.Add(new Book { Title = "İyi Kitap", Author = "İyi Kitap", Id = 2 });
