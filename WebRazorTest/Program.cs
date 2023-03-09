@@ -1,7 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using WebRazorTest.Data;
+
+var builder = WebApplication.CreateBuilder(args); //WebApplicationBuilder
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<CustomerDbContext>(options =>
+    options.UseInMemoryDatabase("name")); //Bu tipte(CustomerDbContext) DbContext ekleyen metod
+                                         //override edilen OnConfiguring metodunu bu þekilde server'a yaptýrýyoruz.(EFCore ile EF farký)
+                                        //
 
 var app = builder.Build();
 
