@@ -20,14 +20,15 @@
         <tbody>
         @if (Model.Customers != null)
         {
-            foreach (var contact in Model.Customers)
+            foreach (var cust in Model.Customers)
             {
                 <tr>
-                    <td>@contact.Id </td>
-                    <td>@contact.Name</td>
+                    <td>@cust.Id </td>
+                    <td>@cust.Name</td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@contact.Id">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@contact.Id">Details</a> |
+                        <a asp-page="./Edit" asp-route-id="@cust.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@cust.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@cust.Id">Delete</a> |
                     </td>
                 </tr>
             }

@@ -10,6 +10,9 @@ namespace WebRazorTest.Data
         public CustomerDbContext(DbContextOptions<CustomerDbContext> options)
             : base(options)
         {
+            //!!
+            //Onconfiguring metod kullanmama sebebimiz; bu context'i kişisel olarak kulanmayacağız
+            // ve her istekte bulunanı server'a yönlendireceğiz.
         }
     }
 }

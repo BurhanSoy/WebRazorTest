@@ -8,5 +8,7 @@ namespace WebRazorTest.Model
 
         [Required, StringLength(10)]
         public string? Name { get; set; }
+        //Ön taraftan sadece name geliyor.
+        //Id'yi EF hallediyor.
     }
 }

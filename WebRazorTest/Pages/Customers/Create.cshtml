@@ -6,9 +6,23 @@
 <h1>CREATE</h1>
 <p>Enter a customer name:</p>
 
-<form method="post">
+@*Bizim uzattığımız boş form*@
+<form method="post"> @*Post metodu ile istekte bulunuyoruz*@
     Name:
-    <input asp-for="@Model.Customer!.Name" />
-    <input type="submit" />
+    <div>
+        <div asp-validation-summary = "All"></div> @*Model sayısı arttığı zaman (proplar) sadece modeldeki tipleri validate eder.*@
+    <input type="text" asp-for="Customer.Name"/> 
+    <span asp-validation-for="Customer.Name" class="text-danger"></span> 
+    </div>
+    <input type="submit" /> @*submite basınca post ediyor*@
 </form>
     <a asp-page="index">BACK</a>
+
+@*Post ile ön taraftan arkaya veri gönderiyorsak cs class'ında bind edilmesi gerekiyor.*@
+
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
+    @*Bu script _ValidationScriptsPartial.cshtml'deki scriptleri Layout altındaki scriptlere ekliyor*@
