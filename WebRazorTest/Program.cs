@@ -8,11 +8,12 @@ builder.Services.AddRazorPages();
 
 /*UseInMemoryDatabase("name") metodunun parametresi aslýnda connection string*/
 builder.Services.AddDbContext<CustomerDbContext>(options =>
-    options.UseInMemoryDatabase("name")); //Bu tipte(CustomerDbContext) DbContext ekleyen metod
+    options.UseSqlServer(builder.Configuration.
+    GetConnectionString("myconn")));      //Bu tipte(CustomerDbContext) DbContext ekleyen metod
                                          //override edilen OnConfiguring metodunu bu þekilde server'a yaptýrýyoruz.(EFCore ile EF farký)
                                         //Service'in nasýl baþlatýlacaðýný buradan belirliyoruz.
-                                        //data ile ilgili bilgileri CustDbContext karþýlýyor
-                                        //!!Buradaki iþlem de aslýnda dependency injection!!
+                                       //data ile ilgili bilgileri CustDbContext karþýlýyor
+                                      //!!Buradaki iþlem de aslýnda dependency injection!!
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
